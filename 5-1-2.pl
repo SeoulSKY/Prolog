@@ -82,3 +82,10 @@ mother_of(Person1, Person2) :-
     child_of(Person2, Parent),
     female(Parent),
     Person1 = Parent.
+
+stepmother_of(Person1, Person2) :-
+    child_of(Person2, Parent),
+    ever_married_to(Parent, Spouse),
+    female(Spouse),
+    not(child_of(Person2, Spouse)),
+    Person1 = Spouse.
