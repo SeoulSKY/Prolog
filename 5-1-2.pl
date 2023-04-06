@@ -77,3 +77,8 @@ grandson_of(Person1, Person2) :-
 parent_of(Person1, Person2) :-
     child_of(Person2, Parent),
     Person1 = Parent.
+
+mother_of(Person1, Person2) :-
+    child_of(Person2, Parent),
+    female(Parent),
+    Person1 = Parent.
