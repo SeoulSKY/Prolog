@@ -89,3 +89,8 @@ stepmother_of(Person1, Person2) :-
     female(Spouse),
     not(child_of(Person2, Spouse)),
     Person1 = Spouse.
+
+son_of(Person1, Person2) :-
+    male(Person1),
+    child_of(Child, Person2),
+    Person1 = Child.
