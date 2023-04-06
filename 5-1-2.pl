@@ -53,14 +53,13 @@ senior_royal(louis).
 % Problem 2
 
 uncle_of(Person1, Person2) :-
-    male(Person1),
-    child_of(Person1, GrandParent),
-    male(GrandParent), % remove duplicates
+    child_of(Person2, Parent),
     child_of(Parent, GrandParent),
-    male(Parent), % remove dulicates
-    Parent \= Person1,
-    child_of(Child, Parent),
-    Child = Person2.
+    male(GrandParent), % only checks for grandfather
+    child_of(UncleOrAunt, GrandParent),
+    male(UncleOrAunt),
+    not(child_of(Person2, UncleOrAunt)),
+    Person1 = UncleOrAunt.
 
 grandmother_of(Person1, Person2) :-
     child_of(Person2, Parent),
