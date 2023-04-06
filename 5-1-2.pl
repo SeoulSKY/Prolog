@@ -61,3 +61,9 @@ uncle_of(Person1, Person2) :-
     Parent \= Person1,
     child_of(Child, Parent),
     Child = Person2.
+
+grandmother_of(Person1, Person2) :-
+    child_of(Person2, Parent),
+    child_of(Parent, GrandParent),
+    female(GrandParent),
+    Person1 = GrandParent.
