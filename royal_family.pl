@@ -1,4 +1,4 @@
-% Problem 1
+% Royal Family tree according to the following link: https://www.bbc.com/news/uk-23272491
 
 ever_married_to(charles, diana).
 ever_married_to(diana, charles).
@@ -9,7 +9,6 @@ ever_married_to(catherine, william).
 ever_married_to(harry, meghan).
 ever_married_to(meghan, harry).
 
-% person1 is a child of person2
 child_of(william, charles).
 child_of(william, diana).
 child_of(harry, charles).
@@ -50,7 +49,6 @@ senior_royal(george).
 senior_royal(charlotte).
 senior_royal(louis).
 
-% Problem 2
 
 uncle_of(Person1, Person2) :-
     child_of(Person2, Parent),
